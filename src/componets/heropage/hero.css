@@ -34,6 +34,9 @@ img{
     align-items: center;
     justify-content: space-around;
 }
+.top_heading h5{
+  font-weight: 700;
+}
 #heart:hover{
    /* background-color: rgb(242, 57, 11);
    border-radius: 180%;

@@ -1,32 +1,21 @@
-import React, { useState } from 'react'
-import ItemList from '../assets/ItemList'
+import React, { useState,useContext} from 'react'
+import { MyContext } from '../App'
+
+// import ItemList from '../assets/ItemList'
 function Header() {
 
-         const [selectedMovies, setSelctedMovies] = useState("")
+    const [selectedMovies, setSelctedMovies] = useState("")
+    const {filterFuction} = useContext(MyContext)
 
-         const onChangeHandler = (e) =>{
-           console.log(e.target.value)
-           let userSelection = e.target.value;
-           setSelctedMovies(userSelection)
-           
-        //   const result = ItemList.filter((item,i)=>{
-        //      return item.movielanguages
-        //    })
-        
-        const result = ItemList.map((item ,i)=>{
-              let ans = item.movielanguages;
+    const onChangeHandler = (e) => {
+        console.log(e.target.value)
+        let userSelection = e.target.value;
+        setSelctedMovies(userSelection)
 
-            // let a = ans.filter((it, index)=>{
-            //       if(it === selectedMovies) return it;
-            // })
-             
-            // console.log(a)
-            //  console.log(ans)
-        })
+        filterFuction(userSelection)
 
-            //  console.log(ans)
 
-         }
+    }
 
 
 
@@ -40,7 +29,7 @@ function Header() {
                         <option value="NA">Open this select menu</option>
                         <option value="Hindi">Hindi</option>
                         <option value="Tamil">Tamil</option>
-                        <option value="Telgu">Telgu</option>
+                        <option value="Telugu">Telugu</option>
                         <option value="Kannada">Kannada</option>
                         <option value="Malyalama">Malyalama</option>
                         <option value="Bhojpuri">Bhojpuri</option>
@@ -52,19 +41,41 @@ function Header() {
                         <option value="Oriya">Oriya</option>
                         <option value="Urdu">Urdu</option>
                         <option value="Assamese">Assamese</option>
+                        <option value="English">English</option>
                     </select>
                 </div>
                 <div className="col-3 mt-3">
-                <label htmlFor="" className='text-white'>Filter By Country</label>
+                    <label htmlFor="" className='text-white'>Filter By Country</label>
                     <select className="form-select" aria-label="Default select example">
                         <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="1">India</option>
+                        <option value="2">Nepal</option>
+                        <option value="3">United Kingdom</option>
+                        <option value="3">Australia</option>
+                        <option value="3">Canada</option>
+                        <option value="3">France</option>
+                        <option value="3">Ireland</option>
+                        <option value="3">Kuwait</option>
+                        <option value="3">Singapor</option>
+                        <option value="3">United Arab Emirates</option>
+                        <option value="3">United State</option>
+                        <option value="3">Germany</option>
+                        <option value="3">Finland</option>
+                        <option value="3">Mexico</option>
+                        <option value="3">Egypt</option>
+                        <option value="3">Israel</option>
+                        <option value="3">Indonesia</option>
+                        <option value="3">Netherlands</option>
+                        <option value="3">Sweden</option>
+                        <option value="3">Thailand</option>
+                        <option value="3">South Africa</option>
+                        <option value="3">Portugal</option>
+                        <option value="3">Japan</option>
+                        <option value="3">Chile</option>
                     </select>
                 </div>
                 <div className="col-3 mt-3">
-                <label htmlFor="" className='text-white'>Filter By Language</label>
+                    <label htmlFor="" className='text-white'>Filter By Language</label>
                     <select className="form-select" aria-label="Default select example">
                         <option selected>Open this select menu</option>
                         <option value="1">One</option>
